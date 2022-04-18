@@ -28,11 +28,11 @@ To access admin use the following link
 http://localhost/Baraton-Hostels/admin/home.php
 
 Username
-    ```sh
+    ```
     Admin
     ```
 
 Password 
-    ```sh
+    ```
     1234
     ```
