@@ -21,18 +21,18 @@ This is a website for students to book hostels in Baraton
 
 5. use the following link to open the project in you browser make sure your xampp is running.
 
-   'http://localhost/Baraton-Hostels/'
+   http://localhost/Baraton-Hostels/
 
 ## Login to admin
 To access admin use the following link
-'http://localhost/Baraton-Hostels/admin/home.php'
+http://localhost/Baraton-Hostels/admin/home.php
 
 Username
-'''sh
-Admin
-'''
+    ```sh
+    Admin
+    ```
 
 Password 
-'''sh
-1234
-'''
+    ```sh
+    1234
+    ```
