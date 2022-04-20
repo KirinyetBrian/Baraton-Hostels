@@ -55,6 +55,20 @@ INSERT INTO `login` (`id`, `usname`, `pass`) VALUES
 (1, 'Admin', '1234'),
 (2, 'Prasath', '12345');
 
+
+
+CREATE TABLE `uploads` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `propertyname` varchar(255)  NOT NULL,
+  `Room_Type` varchar(255) NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `images` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL ,
+  `cost` int(11) NOT NULL,
+  `date_time` datetime NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- --------------------------------------------------------
 
 --
@@ -215,6 +229,11 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 ALTER TABLE `roombook`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+
+
+ALTER TABLE `uploads`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

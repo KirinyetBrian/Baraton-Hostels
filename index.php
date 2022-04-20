@@ -1,6 +1,12 @@
-<?php
-include('db.php');
-?>
+<?php  
+session_start();  
+if(!isset($_SESSION["user"]))
+{
+ header("location:login.php");
+}
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +72,7 @@ include('db.php');
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<h1><a class="navbar-brand" href="index.php">BARA <span>TON</span><p class="logo_w3l_agile_caption">Your Favourite Hostels</p></a></h1>
+					<h1><a class="navbar-brand" href="index.php">BARA <span>TON</span><p class="logo_w3l_agile_caption">The Best Hostels</p></a></h1>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -76,8 +82,10 @@ include('db.php');
 							<li class="menu__item"><a href="#about" class="menu__link scroll">About</a></li>
 							<li class="menu__item"><a href="#team" class="menu__link scroll">Team</a></li>
 							<li class="menu__item"><a href="#gallery" class="menu__link scroll">Gallery</a></li>
+							<li ><a href="list.php" class="">List</a></li>
 							<li class="menu__item"><a href="#rooms" class="menu__link scroll">Rooms</a></li>
 							<li class="menu__item"><a href="#contact" class="menu__link scroll">Contact Us</a></li>
+							<li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -839,3 +847,6 @@ fit: true
 </html>
 
 
+<?php
+include('db.php');
+?>

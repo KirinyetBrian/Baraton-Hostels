@@ -10,7 +10,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>SUN RISE ADMIN</title>
+  <title>BARATON ADMIN</title>
   
   
      
@@ -51,7 +51,7 @@
       </div> <!-- end login -->
 
     </div>
-    <div class="bottom">  <h3><a href="../index.php">SUN RISE HOMEPAGE</a></h3></div>
+    <div class="bottom ">  <h3><a href="../index.php">BARATON HOMEPAGE</a></h3></div>
   
   
 </body>

@@ -6,10 +6,9 @@ This is a website for students to book hostels in Baraton
 
 1. Clone from github
 
-    '''sh
-    git clone 'https://github.com/KirinyetBrian/Baraton-Hostels.git'
-
-    '''
+    ```
+    git clone https://github.com/KirinyetBrian/Baraton-Hostels.git
+    ```
 
 ## Installation
 
