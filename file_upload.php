@@ -5,7 +5,27 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 // Database
 include('db.php');
+
+
+$data = $_POST;
+if(
+empty (  $data['propertyname']) ||
+empty (   $data['user']) ||
+empty (  $data['Room_Type']) ||
+empty (   $data['location']) ||
+empty (   $data['contact']) ||
+empty (    $data['cost']))
+
+{
+$response = array(
+    "status" => "alert-danger",
+    "message" => "its null ooh",
+);
+
+}
+
 if (isset($_POST['submit'])) {
+
 
     $uploadsDir = "/uploads";
     $allowedFileType = array('jpg', 'png', 'jpeg');
@@ -25,7 +45,7 @@ if (isset($_POST['submit'])) {
             $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
             $uploadDate      = date('Y-m-d H:i:s');
             $uploadOk = 1;
-
+            
             $propertyname = $_POST['propertyname'];
             $userid = $_SESSION['user'];
             // $userid= 5;
@@ -41,13 +61,7 @@ if (isset($_POST['submit'])) {
             //    echo  $contact;
             //    echo  $cost;
 
-
-            if (is_null($propertyname)) {
-                $response = array(
-                    "status" => "alert-danger",
-                    "message" => "its null ooh",
-                );
-            }
+              
 
             if (in_array($fileType, $allowedFileType)) {
                 if (move_uploaded_file($_FILES['fileUpload']['tmp_name'][$i], 'uploads/' . $filename)) {
@@ -84,7 +98,7 @@ if (isset($_POST['submit'])) {
                 } else {
                     $response = array(
                         "status" => "alert-danger",
-                        "message" => $sqlVal,
+                        "message" =>"kindly fill all data",
                     );
                 }
             }

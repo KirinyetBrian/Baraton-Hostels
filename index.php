@@ -438,7 +438,33 @@ if(!isset($_SESSION["user"]))
 				<div class="clearfix"> </div>
 </section>
 <!-- //gallery -->
-	 <!-- rooms & rates -->
+
+<!-- 
+	gallery view of uploaded images 
+	<div class="plans-section" id="rooms">
+	<div class="gallery">
+				<h2>Uploaded Images</h2>
+				<?php include 'db.php';
+				
+				// Get images from the database
+$query = $con->query("SELECT * FROM uploads ORDER BY id DESC");
+
+if($query->num_rows > 0){
+    while($row = $query->fetch_assoc()){
+        $imageURL = 'uploads/'.$row["images"];
+?>
+    <img src="<?php echo $imageURL; ?>" alt="" class="img-responsive" />
+<?php }
+}else{ ?>
+    <p>No image(s) found...</p>
+<?php } ?>
+			</div>
+</div>
+</div> -->
+
+
+
+
       <div class="plans-section" id="rooms">
 				 <div class="container">
 				 <h3 class="title-w3-agileits title-black-wthree">Rooms And Rates</h3>
@@ -446,10 +472,20 @@ if(!isset($_SESSION["user"]))
 				 <div class="col-md-3 price-grid">
 					<div class="price-block agile">
 						<div class="price-gd-top">
-						<img src="images/r1.jpg" alt=" " class="img-responsive" />
-							<h4>Shared Room</h4>
-						</div>
-						<div class="price-gd-bottom">
+						<?php include 'db.php';
+				
+				// Get images from the database
+$query = $con->query("SELECT * FROM uploads ORDER BY id DESC");
+
+if($query->num_rows > 0){
+    while($row = $query->fetch_assoc()){
+        $imageURL = 'uploads/'.$row["images"];
+?>
+    <img src="<?php echo $imageURL; ?>" alt="" class="img-responsive" />
+	<h4>Shared Room</h4>
+	<!-- <img src="images/r1.jpg" alt=" " class="img-responsive" /> -->
+					
+	<div class="price-gd-bottom">
 							   <div class="price-list">
 									<ul>
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -460,198 +496,28 @@ if(!isset($_SESSION["user"]))
 									
 								     </ul>
 							</div>
-							<div class="price-selet">	
+						</div>
+						<div class="price-selet">	
 								<h3><span>Ksh</span>5000</h3>						
 								<a href="admin/reservation.php" >Book Now</a>
 							</div>
+							<?php }
+}?>
+	
 						</div>
-					</div>
 				</div>
-				<div class="col-md-3 price-grid ">
-					<div class="price-block agile">
-						<div class="price-gd-top">
-						<img src="images/r2.jpg" alt=" " class="img-responsive" />
-							<h4>Bedsitter</h4>
-						</div>
-						<div class="price-gd-bottom">
-							<div class="price-list">
-									<ul>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-								</ul>
-							</div>
-							<div class="price-selet">
-								<h3><span>Ksh</span>7000</h3>
-								<a href="admin/reservation.php" >Book Now</a>
-							</div>
-						</div>
-					</div>
+
 				</div>
-				<div class="col-md-3 price-grid lost">
-					<div class="price-block agile">
-						<div class="price-gd-top">
-						<img src="images/r3.jpg" alt=" " class="img-responsive" />
-							<h4>One Bedroom</h4>
-						</div>
-						<div class="price-gd-bottom">
-							<div class="price-list">
-								<ul>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-								</ul>
-							</div>
-							<div class="price-selet">
-								<h3><span>Ksh</span>9000</h3>
-								<a href="admin/reservation.php" >Book Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 price-grid wthree lost">
-					<div class="price-block agile">
-						<div class="price-gd-top ">
-							<img src="images/r4.jpg" alt=" " class="img-responsive" />
-							<h4>Single Room</h4>
-						</div>
-						<div class="price-gd-bottom">
-							<div class="price-list">
-								<ul>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-								</ul>
-							</div>
-							<div class="price-selet">
-								<h3><span>Ksh </span> 8000</h3>
-								<a href="admin/reservation.php" >Book Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
+
+    			
+				
+				
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
 	 <!--// rooms & rates -->
-  <!-- visitors -->
-	<!-- <div class="w3l-visitors-agile" >
-		<div class="container">
-                 <h3 class="title-w3-agileits title-black-wthree">What other visitors experienced</h3> 
-		</div>
-		<div class="w3layouts_work_grids">
-			<section class="slider">
-				<div class="flexslider">
-					<ul class="slides">
-						<li>
-							<div class="w3layouts_work_grid_left">
-								<img src="images/5.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_work_grid_left_pos">
-									<img src="images/c1.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-							<div class="w3layouts_work_grid_right">
-								<h4>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								Worth to come again
-								</h4>
-								<p>Sed tempus vestibulum lacus blandit faucibus. 
-									Nunc imperdiet, diam nec rhoncus ullamcorper, nisl nulla suscipit ligula, 
-									at imperdiet urna. </p>
-								<h5>Julia Rose</h5>
-								<p>Germany</p>
-							</div>
-							<div class="clearfix"> </div>
-						</li>
-						<li>
-							<div class="w3layouts_work_grid_left">
-								<img src="images/5.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_work_grid_left_pos">
-									<img src="images/c2.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-							<div class="w3layouts_work_grid_right">
-								<h4>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-								Worth to come again
-								</h4>
-								<p>Sed tempus vestibulum lacus blandit faucibus. 
-									Nunc imperdiet, diam nec rhoncus ullamcorper, nisl nulla suscipit ligula, 
-									at imperdiet urna. </p>
-								<h5>Jahnatan Smith</h5>
-								<p>United States</p>
-							</div>
-							<div class="clearfix"> </div>
-						</li>
-						<li>
-							<div class="w3layouts_work_grid_left">
-								<img src="images/5.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_work_grid_left_pos">
-									<img src="images/c3.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-							<div class="w3layouts_work_grid_right">
-								<h4>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-								Worth to come again
-								</h4>
-								<p>Sed tempus vestibulum lacus blandit faucibus. 
-									Nunc imperdiet, diam nec rhoncus ullamcorper, nisl nulla suscipit ligula, 
-									at imperdiet urna. </p>
-								<h5>Rosalind Cloer</h5>
-								<p>Italy</p>
-							</div>
-							<div class="clearfix"> </div>
-						</li>
-						<li>
-							<div class="w3layouts_work_grid_left">
-								<img src="images/5.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_work_grid_left_pos">
-									<img src="images/c4.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-							<div class="w3layouts_work_grid_right">
-								<h4>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-								Worth to come again
-								</h4>
-								<p>Sed tempus vestibulum lacus blandit faucibus. 
-									Nunc imperdiet, diam nec rhoncus ullamcorper, nisl nulla suscipit ligula, 
-									at imperdiet urna. </p>
-								<h5>Amie Bublitz</h5>
-								<p>Switzerland</p>
-							</div>
-							<div class="clearfix"> </div>
-						</li>
-					</ul>
-				</div>
-			</section>
-		</div>	
-	</div> -->
-  <!-- visitors -->
+ 
 <!-- contact -->
 <section class="contact-w3ls" id="contact">
 	<div class="container">
@@ -843,6 +709,8 @@ fit: true
 	</div>
 <!-- //smooth scrolling -->
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+
+
 </body>
 </html>
 
