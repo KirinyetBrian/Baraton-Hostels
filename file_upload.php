@@ -68,9 +68,9 @@ if (isset($_POST['submit'])) {
             }
 
             // Add into MySQL database
-            $insert = mysqli_query($con, "INSERT INTO uploads (images,date_time,userid,propertyname,Room_Type,location,contact,cost) 
+            // $insert = mysqli_query($con, "INSERT INTO uploads (images,date_time,userid,propertyname,Room_Type,location,contact,cost) 
                    
-                  VALUES ('" . $filename . "','" . $uploadDate . "','" . $userid . "','" . $propertyname . "','" . $Room_Type . "','" . $location . "','" . $contact . "','" . $cost . "')");
+            //       VALUES ('" . $filename . "','" . $uploadDate . "','" . $userid . "','" . $propertyname . "','" . $Room_Type . "','" . $location . "','" . $contact . "','" . $cost . "')");
             if (!empty($sqlVal)) {
                 $insert = mysqli_query($con, "INSERT INTO uploads (images,date_time,userid,propertyname,Room_Type,location,contact,cost) 
                    
